@@ -16,6 +16,10 @@ const loginUserIntoDB = async(payLoad: {email:string,password:string}) =>{
        const matchPassword = await bcrypt.compare(password,user.password);
      
       
+       if(!matchPassword){
+        throw new Error("Invalid Credentials");
+       }
+
 
 
 const jwtpayload = {
