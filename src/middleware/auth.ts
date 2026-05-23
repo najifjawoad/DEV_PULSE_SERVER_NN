@@ -21,7 +21,7 @@ try {
    
    const userData = await pool.query(`
      SELECT * FROM users WHERE email=$1
-    `,[decoded.email])
+    `,[decoded])
 
     const user = userData.rows[0]
     
