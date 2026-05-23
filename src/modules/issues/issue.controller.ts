@@ -19,7 +19,12 @@ const createIssue = async (req: Request, res: Response) => {
       data: result.rows[0],
     });
   } catch (error: any) {
-
+    sendResponse(res, {
+      statusCode: 500,
+      success: false,
+      message: error.message,
+      data: error,
+    });
   }
 };
 
